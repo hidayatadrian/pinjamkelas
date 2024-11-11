@@ -14,7 +14,6 @@ import { app, db, provider, auth } from '../../lib/firebase';
 import '../globals.css'
 interface DashboardProps { }
 import ProfilContent from '../dashboard/ProfilContent'
-import DashboardContent  from '../adminpage/DashboardContent';
 
 
 const Dashboard: React.FC<DashboardProps> = () => {
@@ -26,13 +25,13 @@ const Dashboard: React.FC<DashboardProps> = () => {
             case 'dashboard':
                 return <KelasContent />;
             case 'kelas':
-                return <DashboardContent />;
+                return <ProfilContent />;
             case 'peminjaman':
                 return <PeminjamanContent />;
             case 'profil':
                 return <ProfilContent />;
             default:
-                return <DashboardContent />;
+                return <ProfilContent />;
         }
     };
 
