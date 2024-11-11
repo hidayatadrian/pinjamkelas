@@ -25,5 +25,10 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
+if (typeof window !== 'undefined') {
+    firebaseApp = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    auth = getAuth(firebaseApp);
+    db = getFirestore(firebaseApp);
+  }
 
 export {app, analytics, auth, provider, db}
