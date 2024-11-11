@@ -1,12 +1,10 @@
 // /app/adminpage/page.tsx
-import dynamic from 'next/dynamic'
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+export const fetchCache = 'force-no-store'
 
-// Import AdminPage dynamically with SSR disabled
-const AdminPageComponent = dynamic(
-  () => import('../components/AdminPage'),
-  { ssr: false }
-)
-
-export default function AdminPage() {
-  return <AdminPageComponent />
+const AdminPage = () => {
+  return <div id="admin-root"></div>
 }
+
+export default AdminPage

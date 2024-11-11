@@ -44,6 +44,7 @@ const AdminPage = () => {
 
     // Check authentication
     useEffect(() => {
+        if (typeof window === 'undefined') return;
         const unsubscribe = auth.onAuthStateChanged((user) => {
             if (!user) {
                 router.push('/');
